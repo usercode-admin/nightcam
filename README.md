@@ -14,14 +14,14 @@ CS → 41
 BL → 3v3
 ```
 <p align="center">
-  <img src="0003_20(1).png" alt="Mô tả ảnh" width="500">
+  <img src="tut.png" alt="Diagram" width="500">
 </p>
 
 ## We also need additional supporting equipment
 
 ##### 3W IR LED with automatic on/off function:
 <p align="center">
-  <img src="infrared-led-board-b-3_2.jpg" alt="Mô tả ảnh" width="500">
+  <img src="infrared-led-board-b-3_2.jpg" alt="Diagram" width="500">
 </p>
 Specifically for the ESP32 S3 N16R8 camera and ST7789 1.54-inch monitor; not all ESP cameras or monitors use the same signal cable, so caution is needed.
 
