@@ -51,3 +51,19 @@ The source code bypasses standard automatic exposure controls to optimize the **
    * **PSRAM:** "OPI PSRAM" (Crucial for the 8MB R8 chip variant)
    * **Partition Scheme:** Huge APP (3MB No OTA/1MB SPIFFS) or larger.
    
+# Hey, hey
+###### Here are a few things you need to do to enable your camera to see in the night.
+First, you need to use small tweezers or a soft object to apply just enough force to the camera module and remove the lens. You will see it looks like this:
+<p align="center">
+  <img src="cam2.jpg" alt="Diagram" width="500">
+</p>
+And then you need to take out the light filter, it looks like this:
+<p align="center">
+  <img src="cam1.jpg" alt="Diagram" width="500">
+</p>
+
+###### Some notes:
+You need to select the correct N16R8 ESP module to ensure 100% compatibility with my firmware and avoid conflicts.
+You also need to select the 1.54-inch st7789 screen for compatibility with my firmware and ESP.
+And even when you remove the camera's light filter, you need to be careful to avoid scratching the camera lens. 
+Removing the light filter can also cause slight color inaccuracies in the camera; it's a trade-off.
