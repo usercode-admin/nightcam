@@ -84,3 +84,8 @@ DC / RS → GPIO 21
 CS → GPIO 42
 BLK / LED / LIGHT → 3.3V
 ```
+A more visual diagram:
+<p align="center">
+  <img src="main.png" alt="Diagram" width="500">
+</p>
+All source code, bin files, everything is meticulously calculated for the ESP32 S3 N16R8 and the non-replaceable 1.54-inch ST7789 display. 
