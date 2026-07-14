@@ -70,4 +70,17 @@ Removing the light filter can also cause slight color inaccuracies in the camera
 
 # UPDATE!↑
 This version has passed the loading and testing phase, and it works, so we created a separate folder to contain the source code files and compiled it.
+
 [Complete source code and digital schematics](./Complete%20source%20code%20and%20digital%20schematics/)
+After navigating to the folder, select the "nightcam.ino.merged.bin" file to load it immediately, as it's a fully compiled file.
+###### Wiring diagram for esp32 s3 N16R8 camera and st7789 1.54-inch monitor
+```
+GND → GND
+VCC → 3.3V
+SCL / SCLK / CLK → GPIO 14
+SDA / MOSI / DIN → GPIO 47
+RES / RST / RESET → GPIO 2
+DC / RS → GPIO 21
+CS → GPIO 42
+BLK / LED / LIGHT → 3.3V
+```
