@@ -10,16 +10,13 @@ public:
   LGFX(void) {
     {
       auto cfg = _bus_instance.config();
-      // ĐỔI SANG SPI3_HOST để tránh xung đột chân IOMUX (7, 9, 10, 11) của bộ SPI2 với Camera
       cfg.spi_host = SPI3_HOST; 
       cfg.spi_mode = 0;
-      cfg.freq_write = 80000000; // 80MHz siêu mượt cho ST7789
+      cfg.freq_write = 80000000;
       cfg.freq_read  = 16000000;
       cfg.spi_3wire  = true;
       cfg.use_lock   = true;
       cfg.dma_channel = SPI_DMA_CH_AUTO;
-
-      // Giữ nguyên các chân màn hình định tuyến của ông
       cfg.pin_sclk = 14; 
       cfg.pin_mosi = 47; 
       cfg.pin_miso = -1;
@@ -55,7 +52,6 @@ public:
 
 LGFX lcd;
 
-// CẤU HÌNH CHÂN CAMERA MẶC ĐỊNH KIT S3 CAM (Đã sửa lỗi gõ nhảy dòng chân Y3)
 #define PWDN_GPIO_NUM     -1
 #define RESET_GPIO_NUM    -1
 #define XCLK_GPIO_NUM     15
@@ -67,7 +63,7 @@ LGFX lcd;
 #define Y6_GPIO_NUM       12
 #define Y5_GPIO_NUM       10
 #define Y4_GPIO_NUM       8
-#define Y3_GPIO_NUM       9   // Đã sửa lỗi kéo số 9 lên đúng hàng
+#define Y3_GPIO_NUM       9
 #define Y2_GPIO_NUM       11
 #define VSYNC_GPIO_NUM    6
 #define HREF_GPIO_NUM     7
@@ -102,8 +98,8 @@ void setup() {
   config.pixel_format = PIXFORMAT_RGB565;
   config.frame_size   = FRAMESIZE_240X240;
   config.jpeg_quality = 10;
-  config.fb_count     = 3;                    // Giữ triple buffer để đẩy max tốc độ khung hình
-  config.fb_location  = CAMERA_FB_IN_PSRAM;   // Ép chạy trực tiếp trên 8MB PSRAM OPI của con N16R8
+  config.fb_count     = 3;
+  config.fb_location  = CAMERA_FB_IN_PSRAM;
   config.grab_mode    = CAMERA_GRAB_WHEN_EMPTY;
   
   esp_err_t err = esp_camera_init(&config);
@@ -120,7 +116,7 @@ void setup() {
     s->set_gainceiling(s, GAINCEILING_16X);
     s->set_exposure_ctrl(s, 1);
     s->set_aec2(s, 1);
-    s->set_aec_value(s, 450); // Cấu hình tối ưu phơi sáng đêm nét cho OV3660
+    s->set_aec_value(s, 450);
     s->set_denoise(s, 1);
   }
 }
@@ -129,7 +125,6 @@ void loop() {
   camera_fb_t * fb = esp_camera_fb_get();
   if (!fb) return;
 
-  // Đẩy thẳng mảng pixel lên màn hình ST7789 cực nhanh qua DMA
   lcd.pushImage(0, 0, 240, 240, (uint16_t *)fb->buf);
 
   esp_camera_fb_return(fb);
