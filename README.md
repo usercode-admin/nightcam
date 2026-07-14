@@ -70,7 +70,4 @@ Removing the light filter can also cause slight color inaccuracies in the camera
 
 # UPDATE!↑
 This version has passed the loading and testing phase, and it works, so we created a separate folder to contain the source code files and compiled it.
-<details>
-  <summary><b>📂 Xem cấu trúc thư mục dự án</b></Complete source code and digital schematics>/
-
-  ```text
+[Complete source code and digital schematics](./Complete%20source%20code%20and%20digital%20schematics/)
