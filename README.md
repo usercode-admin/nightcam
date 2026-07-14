@@ -67,3 +67,10 @@ You need to select the correct N16R8 ESP module to ensure 100% compatibility wit
 You also need to select the 1.54-inch st7789 screen for compatibility with my firmware and ESP.
 And even when you remove the camera's light filter, you need to be careful to avoid scratching the camera lens. 
 Removing the light filter can also cause slight color inaccuracies in the camera; it's a trade-off.
+
+# UPDATE!↑
+This version has passed the loading and testing phase, and it works, so we created a separate folder to contain the source code files and compiled it.
+<details>
+  <summary><b>📂 Xem cấu trúc thư mục dự án</b></Complete source code and digital schematics>/
+
+  ```text
